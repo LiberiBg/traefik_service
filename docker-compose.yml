@@ -1,0 +1,36 @@
+services:
+
+  traefik:
+    image: "traefik:v3.1"
+    container_name: "traefik"
+    env_file: ".env"
+    labels:
+      - "traefik.http.middlewares.test-auth.basicauth.usersfile=users"
+    command:
+      #- "--log.level=DEBUG"
+      - "--api.insecure=true"
+      - "--providers.docker=true"
+      - "--providers.docker.exposedbydefault=false"
+      - "--entryPoints.websecure.address=:443"
+      - "--certificatesresolvers.myresolver.acme.tlschallenge=true"
+      #- "--certificatesresolvers.myresolver.acme.caserver=https://acme-staging-v02.api.letsencrypt.org/directory"
+      - "--certificatesresolvers.myresolver.acme.email=${EMAIL}"
+      - "--certificatesresolvers.myresolver.acme.storage=/letsencrypt/acme.json"
+    ports:
+      - "443:443"
+      - "8080:8080"
+    volumes:
+      - "./letsencrypt:/letsencrypt"
+      - "/var/run/docker.sock:/var/run/docker.sock:ro"
+
+  whoami:
+    image: "traefik/whoami"
+    container_name: "simple-service"
+    labels:
+    # Explicitly tell Traefik to expose this container
+      - "traefik.enable=true"
+    # The domain the service will respond to
+      - "traefik.http.routers.whoami.rule=Host(`whoami.localhost`)"
+    # Allow request only from the predefined entry point named "web"
+      - "traefik.http.routers.whoami.entrypoints=websecure"
+      - "traefik.http.routers.whoami.tls.certresolver=myresolver"

@@ -1,0 +1,107 @@
+2024-09-18T18:31:40Z INF Traefik version 3.0.4 built on 2024-07-02T13:46:37Z version=3.0.4
+2024-09-18T18:31:40Z INF 
+Stats collection is disabled.
+Help us improve Traefik by turning this feature on :)
+More details on: https://doc.traefik.io/traefik/contributing/data-collection/
+
+2024-09-18T18:31:40Z INF Starting provider aggregator aggregator.ProviderAggregator
+2024-09-18T18:31:40Z INF Starting provider *traefik.Provider
+2024-09-18T18:31:40Z INF Starting provider *docker.Provider
+2024-09-18T18:31:40Z INF Starting provider *acme.Provider
+2024-09-18T18:31:40Z INF Testing certificate renew... acmeCA=https://acme-v02.api.letsencrypt.org/directory providerName=myresolver.acme
+2024-09-18T18:31:40Z INF Starting provider *acme.ChallengeTLSALPN
+2024-09-18T18:31:40Z ERR error="open users: no such file or directory" entryPointName=websecure routerName=mydashboard@docker
+2024-09-18T18:31:42Z INF Register... providerName=myresolver.acme
+2024-09-18T18:31:44Z ERR Unable to obtain ACME certificate for domains error="unable to generate a certificate for the domains [whoami.localhost www.whoami.example.com]: acme: error: 400 :: POST :: https://acme-v02.api.letsencrypt.org/acme/new-order :: urn:ietf:params:acme:error:rejectedIdentifier :: Invalid identifiers requested :: Cannot issue for \"whoami.localhost\": Domain name does not end with a valid public suffix (TLD)" ACME CA=https://acme-v02.api.letsencrypt.org/directory acmeCA=https://acme-v02.api.letsencrypt.org/directory domains=["whoami.localhost","www.whoami.example.com"] providerName=myresolver.acme routerName=mywhoami@docker rule="Host(`whoami.localhost`) || Host(`www.whoami.example.com`)"
+2024-09-18T18:31:44Z ERR Unable to obtain ACME certificate for domains error="unable to generate a certificate for the domains [localhost]: acme: error: 400 :: POST :: https://acme-v02.api.letsencrypt.org/acme/new-order :: urn:ietf:params:acme:error:rejectedIdentifier :: Invalid identifiers requested :: Cannot issue for \"localhost\": Domain name needs at least one dot" ACME CA=https://acme-v02.api.letsencrypt.org/directory acmeCA=https://acme-v02.api.letsencrypt.org/directory domains=["localhost"] providerName=myresolver.acme routerName=mydashboard@docker rule=Host(`localhost`)
+2024-09-18T18:33:16Z INF I have to go...
+2024-09-18T18:33:16Z INF Stopping server gracefully
+2024-09-18T18:33:16Z ERR error="accept tcp [::]:443: use of closed network connection" entryPointName=websecure
+2024-09-18T18:33:16Z ERR error="accept tcp [::]:80: use of closed network connection" entryPointName=web
+2024-09-18T18:33:16Z ERR error="close tcp [::]:80: use of closed network connection" entryPointName=web
+2024-09-18T18:33:16Z ERR error="close tcp [::]:443: use of closed network connection" entryPointName=websecure
+2024-09-18T18:33:17Z ERR error="open users: no such file or directory" entryPointName=websecure routerName=mydashboard@docker
+2024-09-18T18:33:17Z INF Server stopped
+2024-09-18T18:33:17Z INF Shutting down
+2024-09-18T18:33:17Z ERR Unable to obtain ACME certificate for domains error="unable to generate a certificate for the domains [localhost]: acme: error: 400 :: POST :: https://acme-v02.api.letsencrypt.org/acme/new-order :: urn:ietf:params:acme:error:rejectedIdentifier :: Invalid identifiers requested :: Cannot issue for \"localhost\": Domain name needs at least one dot" ACME CA=https://acme-v02.api.letsencrypt.org/directory acmeCA=https://acme-v02.api.letsencrypt.org/directory domains=["localhost"] providerName=myresolver.acme routerName=mydashboard@docker rule=Host(`localhost`)
+2024-09-18T18:33:20Z INF Traefik version 3.0.4 built on 2024-07-02T13:46:37Z version=3.0.4
+2024-09-18T18:33:20Z INF 
+Stats collection is disabled.
+Help us improve Traefik by turning this feature on :)
+More details on: https://doc.traefik.io/traefik/contributing/data-collection/
+
+2024-09-18T18:33:20Z INF Starting provider aggregator aggregator.ProviderAggregator
+2024-09-18T18:33:20Z INF Starting provider *traefik.Provider
+2024-09-18T18:33:20Z INF Starting provider *docker.Provider
+2024-09-18T18:33:20Z INF Starting provider *acme.ChallengeTLSALPN
+2024-09-18T18:33:20Z INF Starting provider *acme.Provider
+2024-09-18T18:33:20Z INF Testing certificate renew... acmeCA=https://acme-v02.api.letsencrypt.org/directory providerName=myresolver.acme
+2024-09-18T18:33:20Z ERR error="open users: no such file or directory" entryPointName=websecure routerName=mydashboard@docker
+2024-09-18T18:33:20Z ERR error="invalid rule Host(localhost), error: error while parsing rule Host(localhost): localhost is not defined" entryPointName=websecure routerName=mydashboard@docker
+2024-09-18T18:33:20Z ERR Error parsing domains in provider ACME error="error while parsing rule Host(localhost): localhost is not defined" ACME CA=https://acme-v02.api.letsencrypt.org/directory acmeCA=https://acme-v02.api.letsencrypt.org/directory providerName=myresolver.acme routerName=mydashboard@docker rule=Host(localhost)
+2024-09-18T18:33:21Z ERR Unable to obtain ACME certificate for domains error="unable to generate a certificate for the domains [whoami.localhost www.whoami.example.com]: acme: error: 400 :: POST :: https://acme-v02.api.letsencrypt.org/acme/new-order :: urn:ietf:params:acme:error:rejectedIdentifier :: Invalid identifiers requested :: Cannot issue for \"whoami.localhost\": Domain name does not end with a valid public suffix (TLD)" ACME CA=https://acme-v02.api.letsencrypt.org/directory acmeCA=https://acme-v02.api.letsencrypt.org/directory domains=["whoami.localhost","www.whoami.example.com"] providerName=myresolver.acme routerName=mywhoami@docker rule="Host(`whoami.localhost`) || Host(`www.whoami.example.com`)"
+2024-09-18T18:34:25Z INF I have to go...
+2024-09-18T18:34:25Z INF Stopping server gracefully
+2024-09-18T18:34:25Z ERR error="accept tcp [::]:443: use of closed network connection" entryPointName=websecure
+2024-09-18T18:34:25Z ERR error="accept tcp [::]:80: use of closed network connection" entryPointName=web
+2024-09-18T18:34:25Z ERR error="close tcp [::]:80: use of closed network connection" entryPointName=web
+2024-09-18T18:34:25Z ERR error="close tcp [::]:443: use of closed network connection" entryPointName=websecure
+2024-09-18T18:34:25Z ERR error="open users: no such file or directory" entryPointName=websecure routerName=mydashboard@docker
+2024-09-18T18:34:25Z ERR error="invalid rule Host(localhost), error: error while parsing rule Host(localhost): localhost is not defined" entryPointName=websecure routerName=mydashboard@docker
+2024-09-18T18:34:25Z ERR Error parsing domains in provider ACME error="error while parsing rule Host(localhost): localhost is not defined" ACME CA=https://acme-v02.api.letsencrypt.org/directory acmeCA=https://acme-v02.api.letsencrypt.org/directory providerName=myresolver.acme routerName=mydashboard@docker rule=Host(localhost)
+2024-09-18T18:34:25Z INF Server stopped
+2024-09-18T18:34:25Z INF Shutting down
+2024-09-18T18:34:29Z INF Traefik version 3.0.4 built on 2024-07-02T13:46:37Z version=3.0.4
+2024-09-18T18:34:29Z INF 
+Stats collection is disabled.
+Help us improve Traefik by turning this feature on :)
+More details on: https://doc.traefik.io/traefik/contributing/data-collection/
+
+2024-09-18T18:34:29Z INF Starting provider aggregator aggregator.ProviderAggregator
+2024-09-18T18:34:29Z INF Starting provider *traefik.Provider
+2024-09-18T18:34:29Z INF Starting provider *acme.ChallengeTLSALPN
+2024-09-18T18:34:29Z INF Starting provider *docker.Provider
+2024-09-18T18:34:29Z INF Starting provider *acme.Provider
+2024-09-18T18:34:29Z INF Testing certificate renew... acmeCA=https://acme-v02.api.letsencrypt.org/directory providerName=myresolver.acme
+2024-09-18T18:34:29Z ERR error="open users: no such file or directory" entryPointName=websecure routerName=mydashboard@docker
+2024-09-18T18:34:29Z ERR error="invalid rule Host('localhost'), error: error while parsing rule Host('localhost'): 1:6: illegal rune literal" entryPointName=websecure routerName=mydashboard@docker
+2024-09-18T18:34:29Z ERR Error parsing domains in provider ACME error="error while parsing rule Host('localhost'): 1:6: illegal rune literal" ACME CA=https://acme-v02.api.letsencrypt.org/directory acmeCA=https://acme-v02.api.letsencrypt.org/directory providerName=myresolver.acme routerName=mydashboard@docker rule=Host('localhost')
+2024-09-18T18:34:30Z ERR Unable to obtain ACME certificate for domains error="unable to generate a certificate for the domains [whoami.localhost www.whoami.example.com]: acme: error: 400 :: POST :: https://acme-v02.api.letsencrypt.org/acme/new-order :: urn:ietf:params:acme:error:rejectedIdentifier :: Invalid identifiers requested :: Cannot issue for \"whoami.localhost\": Domain name does not end with a valid public suffix (TLD)" ACME CA=https://acme-v02.api.letsencrypt.org/directory acmeCA=https://acme-v02.api.letsencrypt.org/directory domains=["whoami.localhost","www.whoami.example.com"] providerName=myresolver.acme routerName=mywhoami@docker rule="Host(`whoami.localhost`) || Host(`www.whoami.example.com`)"
+2024-09-18T18:35:02Z INF I have to go...
+2024-09-18T18:35:02Z INF Stopping server gracefully
+2024-09-18T18:35:02Z ERR error="accept tcp [::]:443: use of closed network connection" entryPointName=websecure
+2024-09-18T18:35:02Z ERR error="accept tcp [::]:80: use of closed network connection" entryPointName=web
+2024-09-18T18:35:02Z ERR error="close tcp [::]:443: use of closed network connection" entryPointName=websecure
+2024-09-18T18:35:02Z ERR error="close tcp [::]:80: use of closed network connection" entryPointName=web
+2024-09-18T18:35:02Z ERR error="open users: no such file or directory" entryPointName=websecure routerName=mydashboard@docker
+2024-09-18T18:35:02Z ERR error="invalid rule Host('localhost'), error: error while parsing rule Host('localhost'): 1:6: illegal rune literal" entryPointName=websecure routerName=mydashboard@docker
+2024-09-18T18:35:02Z ERR Error parsing domains in provider ACME error="error while parsing rule Host('localhost'): 1:6: illegal rune literal" ACME CA=https://acme-v02.api.letsencrypt.org/directory acmeCA=https://acme-v02.api.letsencrypt.org/directory providerName=myresolver.acme routerName=mydashboard@docker rule=Host('localhost')
+2024-09-18T18:35:03Z INF Server stopped
+2024-09-18T18:35:03Z INF Shutting down
+2024-09-18T18:35:09Z INF Traefik version 3.0.4 built on 2024-07-02T13:46:37Z version=3.0.4
+2024-09-18T18:35:09Z INF 
+Stats collection is disabled.
+Help us improve Traefik by turning this feature on :)
+More details on: https://doc.traefik.io/traefik/contributing/data-collection/
+
+2024-09-18T18:35:09Z INF Starting provider aggregator aggregator.ProviderAggregator
+2024-09-18T18:35:09Z INF Starting provider *traefik.Provider
+2024-09-18T18:35:09Z INF Starting provider *docker.Provider
+2024-09-18T18:35:09Z INF Starting provider *acme.ChallengeTLSALPN
+2024-09-18T18:35:09Z INF Starting provider *acme.Provider
+2024-09-18T18:35:09Z INF Testing certificate renew... acmeCA=https://acme-v02.api.letsencrypt.org/directory providerName=myresolver.acme
+2024-09-18T18:35:09Z ERR error="open users: no such file or directory" entryPointName=websecure routerName=mydashboard@docker
+2024-09-18T18:35:09Z ERR error="invalid rule Host('traefik.localhost'), error: error while parsing rule Host('traefik.localhost'): 1:6: illegal rune literal" entryPointName=websecure routerName=mydashboard@docker
+2024-09-18T18:35:09Z ERR Error parsing domains in provider ACME error="error while parsing rule Host('traefik.localhost'): 1:6: illegal rune literal" ACME CA=https://acme-v02.api.letsencrypt.org/directory acmeCA=https://acme-v02.api.letsencrypt.org/directory providerName=myresolver.acme routerName=mydashboard@docker rule=Host('traefik.localhost')
+2024-09-18T18:35:10Z ERR Unable to obtain ACME certificate for domains error="unable to generate a certificate for the domains [whoami.localhost www.whoami.example.com]: acme: error: 400 :: POST :: https://acme-v02.api.letsencrypt.org/acme/new-order :: urn:ietf:params:acme:error:rejectedIdentifier :: Invalid identifiers requested :: Cannot issue for \"whoami.localhost\": Domain name does not end with a valid public suffix (TLD)" ACME CA=https://acme-v02.api.letsencrypt.org/directory acmeCA=https://acme-v02.api.letsencrypt.org/directory domains=["whoami.localhost","www.whoami.example.com"] providerName=myresolver.acme routerName=mywhoami@docker rule="Host(`whoami.localhost`) || Host(`www.whoami.example.com`)"
+2024-09-18T18:36:46Z INF I have to go...
+2024-09-18T18:36:46Z INF Stopping server gracefully
+2024-09-18T18:36:46Z ERR error="accept tcp [::]:443: use of closed network connection" entryPointName=websecure
+2024-09-18T18:36:46Z ERR error="accept tcp [::]:80: use of closed network connection" entryPointName=web
+2024-09-18T18:36:46Z ERR error="close tcp [::]:80: use of closed network connection" entryPointName=web
+2024-09-18T18:36:46Z ERR error="close tcp [::]:443: use of closed network connection" entryPointName=websecure
+2024-09-18T18:36:47Z ERR error="open users: no such file or directory" entryPointName=websecure routerName=mydashboard@docker
+2024-09-18T18:36:47Z ERR error="invalid rule Host('traefik.localhost'), error: error while parsing rule Host('traefik.localhost'): 1:6: illegal rune literal" entryPointName=websecure routerName=mydashboard@docker
+2024-09-18T18:36:47Z ERR Error parsing domains in provider ACME error="error while parsing rule Host('traefik.localhost'): 1:6: illegal rune literal" ACME CA=https://acme-v02.api.letsencrypt.org/directory acmeCA=https://acme-v02.api.letsencrypt.org/directory providerName=myresolver.acme routerName=mydashboard@docker rule=Host('traefik.localhost')
+2024-09-18T18:36:47Z INF Server stopped
+2024-09-18T18:36:47Z INF Shutting down
